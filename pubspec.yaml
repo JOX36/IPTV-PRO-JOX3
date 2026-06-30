@@ -1,0 +1,50 @@
+name: iptv_pro_jox3
+description: IPTV PRO JOX3 - Deep Ocean Edition
+publish_to: 'none'
+version: 2.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI & Animations
+  google_fonts: ^6.1.0
+  flutter_animate: ^4.3.0
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.0
+  flutter_staggered_animations: ^1.1.1
+  
+  # Video Player
+  video_player: ^2.8.1
+  chewie: ^1.7.1
+  
+  # Network & Data
+  http: ^1.1.2
+  dio: ^5.4.0
+  shared_preferences: ^2.2.2
+  
+  # Utils
+  provider: ^6.1.1
+  intl: ^0.19.0
+  url_launcher: ^6.2.1
+  package_info_plus: ^5.0.1
+  wakelock_plus: ^1.2.1
+  flutter_svg: ^2.0.9
+  
+  # Icons
+  cupertino_icons: ^1.0.6
+  iconsax: ^0.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/

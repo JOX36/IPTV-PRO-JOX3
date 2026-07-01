@@ -1,152 +1,111 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'deep_ocean_colors.dart';
+import 'military_colors.dart';
 
 class AppTheme {
   AppTheme._();
 
-  static ThemeData get darkTheme {
+  static ThemeData get militaryTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: DeepOceanColors.bgPrimary,
+      scaffoldBackgroundColor: MilitaryColors.bgPrimary,
       
-      // Color Scheme
       colorScheme: const ColorScheme.dark(
-        primary: DeepOceanColors.accent,
-        secondary: DeepOceanColors.accentTeal,
-        tertiary: DeepOceanColors.accentIndigo,
-        surface: DeepOceanColors.bgSecondary,
-        background: DeepOceanColors.bgPrimary,
-        error: DeepOceanColors.error,
-        onPrimary: DeepOceanColors.bgPrimary,
-        onSecondary: DeepOceanColors.bgPrimary,
-        onSurface: DeepOceanColors.textPrimary,
-        onBackground: DeepOceanColors.textPrimary,
+        primary: MilitaryColors.accent,
+        secondary: MilitaryColors.accentCyan,
+        tertiary: MilitaryColors.accentOlive,
+        surface: MilitaryColors.bgSecondary,
+        background: MilitaryColors.bgPrimary,
+        error: MilitaryColors.danger,
+        onPrimary: MilitaryColors.bgPrimary,
+        onSecondary: MilitaryColors.bgPrimary,
+        onSurface: MilitaryColors.textPrimary,
+        onBackground: MilitaryColors.textPrimary,
       ),
 
-      // AppBar
+      textTheme: GoogleFonts.orbitronTextTheme(
+        ThemeData.dark().textTheme,
+      ).apply(
+        bodyColor: MilitaryColors.textPrimary,
+        displayColor: MilitaryColors.textPrimary,
+      ).copyWith(
+        headlineLarge: const TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.w900,
+          color: MilitaryColors.accent,
+          letterSpacing: 3,
+        ),
+        headlineMedium: const TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
+          color: MilitaryColors.textPrimary,
+          letterSpacing: 2,
+        ),
+        titleLarge: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
+          color: MilitaryColors.textPrimary,
+          letterSpacing: 1,
+        ),
+        bodyLarge: const TextStyle(
+          fontSize: 14,
+          color: MilitaryColors.textSecondary,
+          letterSpacing: 1,
+        ),
+        bodyMedium: const TextStyle(
+          fontSize: 12,
+          color: MilitaryColors.textMuted,
+        ),
+        labelLarge: const TextStyle(
+          fontSize: 11,
+          fontWeight: FontWeight.w700,
+          color: MilitaryColors.accent,
+          letterSpacing: 2,
+        ),
+      ),
+
       appBarTheme: const AppBarTheme(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        centerTitle: false,
-        titleTextStyle: TextStyle(
-          color: DeepOceanColors.textPrimary,
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
-        ),
-        iconTheme: IconThemeData(color: DeepOceanColors.textPrimary),
-      ),
-
-      // Text Theme
-      textTheme: GoogleFonts.interTextTheme().apply(
-        bodyColor: DeepOceanColors.textPrimary,
-        displayColor: DeepOceanColors.textPrimary,
-      ).copyWith(
-        headlineLarge: const TextStyle(
-          fontSize: 28,
-          fontWeight: FontWeight.w800,
-          color: DeepOceanColors.textPrimary,
-        ),
-        headlineMedium: const TextStyle(
-          fontSize: 22,
-          fontWeight: FontWeight.w700,
-          color: DeepOceanColors.textPrimary,
-        ),
-        titleLarge: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-          color: DeepOceanColors.textPrimary,
-        ),
-        titleMedium: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-          color: DeepOceanColors.textPrimary,
-        ),
-        bodyLarge: const TextStyle(
-          fontSize: 16,
-          color: DeepOceanColors.textPrimary,
-        ),
-        bodyMedium: const TextStyle(
-          fontSize: 14,
-          color: DeepOceanColors.textSecondary,
-        ),
-        bodySmall: const TextStyle(
-          fontSize: 12,
-          color: DeepOceanColors.textMuted,
-        ),
-        labelLarge: const TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
-          color: DeepOceanColors.textPrimary,
+        centerTitle: true,
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.light,
         ),
       ),
 
-      // Card Theme
       cardTheme: CardTheme(
-        color: DeepOceanColors.bgCard,
+        color: MilitaryColors.bgCard,
         elevation: 0,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(12),
+          side: BorderSide(
+            color: MilitaryColors.accent.withOpacity(0.15),
+          ),
         ),
       ),
 
-      // Elevated Button
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-          backgroundColor: DeepOceanColors.accent,
-          foregroundColor: DeepOceanColors.bgPrimary,
+          backgroundColor: MilitaryColors.accent,
+          foregroundColor: MilitaryColors.bgPrimary,
           elevation: 0,
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(10),
           ),
           textStyle: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
+            fontSize: 14,
+            fontWeight: FontWeight.w800,
+            letterSpacing: 2,
           ),
         ),
       ),
 
-      // InputDecoration
-      inputDecorationTheme: InputDecorationTheme(
-        filled: true,
-        fillColor: DeepOceanColors.bgCard,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: BorderSide.none,
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(14),
-          borderSide: const BorderSide(color: DeepOceanColors.accent, width: 1.5),
-        ),
-        hintStyle: const TextStyle(color: DeepOceanColors.textMuted),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 18, vertical: 14),
-      ),
-
-      // BottomNavigationBar
-      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: DeepOceanColors.bgSecondary,
-        selectedItemColor: DeepOceanColors.accent,
-        unselectedItemColor: DeepOceanColors.textMuted,
-        type: BottomNavigationBarType.fixed,
-        elevation: 0,
-      ),
-
-      // Divider
-      dividerTheme: const DividerThemeData(
-        color: DeepOceanColors.bgCard,
-        thickness: 1,
-      ),
-
-      // Chip
-      chipTheme: ChipThemeData(
-        backgroundColor: DeepOceanColors.bgCard,
-        selectedColor: DeepOceanColors.accent,
-        labelStyle: const TextStyle(color: DeepOceanColors.textPrimary),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+      iconTheme: const IconThemeData(
+        color: MilitaryColors.accent,
       ),
     );
   }

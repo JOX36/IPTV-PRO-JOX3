@@ -1,7 +1,7 @@
-name: iptv_pro_jox3
-description: IPTV PRO JOX3 - Deep Ocean Edition
+name: tv_remote_pro
+description: TV Remote PRO - Military Edition
 publish_to: 'none'
-version: 2.0.0+1
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -14,13 +14,14 @@ dependencies:
   google_fonts: ^6.1.0
   flutter_animate: ^4.5.0
   shimmer: ^3.0.0
-  cached_network_image: ^3.3.0
-  video_player: ^2.8.1
-  chewie: 1.7.1
   http: ^1.1.0
+  web_socket_channel: ^2.4.0
   shared_preferences: ^2.2.2
   provider: ^6.1.1
-  intl: ^0.19.0
+  vibration: ^1.8.4
+  flutter_svg: ^2.0.9
+  network_info_plus: ^5.0.3
+  dart_ping: ^9.0.1
 
 dev_dependencies:
   flutter_test:

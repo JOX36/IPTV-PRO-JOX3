@@ -16,7 +16,7 @@ dependencies:
   shimmer: ^3.0.0
   cached_network_image: ^3.3.0
   video_player: ^2.8.1
-  chewie: ^1.7.1
+  chewie: 1.7.1
   http: ^1.1.0
   shared_preferences: ^2.2.2
   provider: ^6.1.1

@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../../core/theme/deep_ocean_colors.dart';
 import '../../../core/models/media_item.dart';
-import '../player/player_screen.dart';
+import '../../player/player_screen.dart';
 
 class HeroBanner extends StatefulWidget {
   final List<MediaItem> items;

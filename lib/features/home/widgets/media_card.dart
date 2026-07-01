@@ -4,7 +4,7 @@ import '../../../core/theme/deep_ocean_colors.dart';
 import '../../../core/models/media_item.dart';
 import '../../../core/services/app_provider.dart';
 import 'package:provider/provider.dart';
-import '../player/player_screen.dart';
+import '../../player/player_screen.dart';
 
 class MediaCard extends StatelessWidget {
   final MediaItem item;

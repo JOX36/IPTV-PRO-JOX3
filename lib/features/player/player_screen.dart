@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/chewie.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../core/theme/deep_ocean_colors.dart';
 import '../../core/models/media_item.dart';
@@ -27,7 +28,8 @@ class _PlayerScreenState extends State<PlayerScreen> {
   void initState() {
     super.initState();
     _initializePlayer();
-    // WakelockPlus.enable(); // Removed - incompatible plugin
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    _keepScreenOn(true);
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
@@ -126,7 +128,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
   void dispose() {
     _videoController?.dispose();
     _chewieController?.dispose();
-    // WakelockPlus.disable(); // Removed - incompatible plugin
+    _keepScreenOn(false);
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.landscapeLeft,
       DeviceOrientation.landscapeRight,
@@ -134,6 +136,12 @@ class _PlayerScreenState extends State<PlayerScreen> {
     ]);
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     super.dispose();
+  }
+
+  static const _channel = MethodChannel('com.jox3.iptvpro/wakelock');
+
+  void _keepScreenOn(bool on) {
+    _channel.invokeMethod('keepScreenOn', on);
   }
 
   @override
